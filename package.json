@@ -115,6 +115,7 @@
     "is-yarn-global": "^0.3.0",
     "isexe": "^2.0.0",
     "jasmine-core": "^4.1.0",
+    "jasmine-spec-reporter": "^7.0.0",
     "js-yaml": "^4.1.0",
     "json-buffer": "^3.0.0",
     "json-schema-traverse": "^0.4.1",
@@ -222,6 +223,7 @@
     "@types/prettier": "^2.6.0",
     "@types/typescript": "^2.0.0",
     "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.3.0",
     "jasmine": "^4.1.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.2",
@@ -230,10 +232,10 @@
   "scripts": {
     "start": "nodemon src/index.ts",
     "build": "npx tsc",
-    "prettier": "prettier --config .prettierrc 'src/**/*.js' --write",
+    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "jasmine": "jasmine",
-    "test" : "npm run build && npm run jasmine",
-
+    "test": "npm run build && npm run jasmine",
+    "lint": "eslint 'index.ts'"
   },
   "repository": {
     "type": "git",
