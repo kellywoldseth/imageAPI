@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 //copy and pasted from documentation
 //I don't understand this yet but would like to
-import { DisplayProcessor, SpecReporter, StacktraceOption } from "jasmine-spec-reporter";
+import { DisplayProcessor, SpecReporter, StacktraceOption, } from 'jasmine-spec-reporter';
 var CustomProcessor = /** @class */ (function (_super) {
     __extends(CustomProcessor, _super);
     function CustomProcessor() {
@@ -29,7 +29,7 @@ var CustomProcessor = /** @class */ (function (_super) {
 jasmine.getEnv().clearReporters();
 jasmine.getEnv().addReporter(new SpecReporter({
     spec: {
-        displayStacktrace: StacktraceOption.NONE
+        displayStacktrace: StacktraceOption.NONE,
     },
     customProcessors: [CustomProcessor],
 }));
