@@ -1,13 +1,16 @@
 import express from 'express';
 import images from './api/images';
 
-const app = express();
-const port = 3000;
+const routes = express.Router();
 
-app.get('/', (req, res) => {
-  res.send('working!');
+routes.get('/', (req, res) => {
+  res.send('main api page!');
 });
 
-app.listen(port, () => {
-  console.log('server started at http://localhost:${port}');
-});
+
+routes.use('/images', images);
+
+export default routes;
+
+
+

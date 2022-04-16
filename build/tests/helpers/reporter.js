@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,41 +14,24 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-DisplayProcessor,
-    3;
-SpecReporter,
-    4;
-StacktraceOption,
-    5;
-from;
-'jasmine-spec-reporter';
-6;
-7;
-8;
-9;
+Object.defineProperty(exports, "__esModule", { value: true });
+//copy and pasted from documentation
+//I don't understand this yet but would like to
+var jasmine_spec_reporter_1 = require("jasmine-spec-reporter");
 var CustomProcessor = /** @class */ (function (_super) {
     __extends(CustomProcessor, _super);
     function CustomProcessor() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CustomProcessor.prototype.displayJasmineStarted = function (info, log) {
-        11;
         return "".concat(log);
-        12;
     };
     return CustomProcessor;
-}(DisplayProcessor));
-14;
-15;
+}(jasmine_spec_reporter_1.DisplayProcessor));
 jasmine.getEnv().clearReporters();
-16;
-17;
-jasmine.getEnv().addReporter(18, new SpecReporter({
-    19: spec
-}, {
-    20: displayStacktrace,
-    StacktraceOption: StacktraceOption,
-    : .NONE,
-    21: 
-}, 22, customProcessors, [CustomProcessor], 23), 24);
-export {};
+jasmine.getEnv().addReporter(new jasmine_spec_reporter_1.SpecReporter({
+    spec: {
+        displayStacktrace: jasmine_spec_reporter_1.StacktraceOption.NONE,
+    },
+    customProcessors: [CustomProcessor],
+}));
