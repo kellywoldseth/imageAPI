@@ -7,6 +7,3 @@ images.get('/images', (req, res) => {
 });
 
 export default images;
-
-
-
