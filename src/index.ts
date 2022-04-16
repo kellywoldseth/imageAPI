@@ -1,8 +1,26 @@
 //test prettier - WORKS!
-//test eslint - NOT WORKING
-//test typescript
-//test jasmine
-//test routes/express/nodemon
+//test eslint - WORKS!
+//test typescript - WORKS!
+//test jasmine - not working
+//test express/nodemon for index - WORKS!
+//test routes/express/nodemon for route (images) - DOES NOT WORK - need to review server lesson 9 to see file structure
+
+import express from 'express';
+import routes from './routes/index';
+
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('working!');
+});
+
+
+
+app.listen(port, ()=> {
+  console.log(`server started at localhost:${port}`)
+ });
+
 
 const add = (num: number, num2: number): number => {
   return num + num2;
