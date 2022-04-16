@@ -11,5 +11,4 @@ routes.get('/', (req, res) => {
 
 routes.use('/images', images);
 
-
 export default routes;
