@@ -1,3 +1,5 @@
+//create router
+
 import express from 'express';
 import images from './api/images';
 

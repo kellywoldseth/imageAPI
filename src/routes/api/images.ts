@@ -1,3 +1,4 @@
+//create "images" route
 import express from 'express';
 
 const images = express.Router();

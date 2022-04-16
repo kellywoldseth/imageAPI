@@ -5,7 +5,7 @@
 //test express/nodemon for index - WORKS!
 //test routes/express/nodemon for route (images) - WORKS!
 
-//testing server build
+//Create server
 import express from 'express';
 import routes from './routes/index';
 
@@ -14,13 +14,13 @@ const port = 3000;
 
 app.use('/api', routes);
 
-
+//start the Express server
 app.listen(port, () => {
   console.log(`server started at localhost:${port}`);
 });
 
 
-//testing typscript
+//testing typscript and jasmine -- delete when main functionality is ready
 const add = (num: number, num2: number): number => {
   return num + num2;
 };
@@ -28,7 +28,6 @@ const add = (num: number, num2: number): number => {
 export default add;
 
 /*
-Set up your server and create an API endpoint. Even though this application is fairly straightforward, you still want to set it up in a scalable way. How can you set up your server and route so that your project remains scalable? Only one endpoint is required. It's best to create this and test that it is working before you move on.
 Install Sharp and configure endpoint. Documentation for Sharp can be found here. It is required that you create a separate module for your processing functionality and import it into your route. It is only required that you add resizing, but you may add additional processing if you choose to extend your application. It is also only required that you work with jpg files, so keep that in mind if you choose to use your own images and they are other formats.
 Pay close attention to if you need to use asynchronous code or not. If you do, make sure you stay consistent throughout your application.
 There is limited information on using Sharp with TypeScript, but don't let that be a blocker. Think about what type the Sharp constructor would return. Have a look at the complete documentation and the examples it provides.
