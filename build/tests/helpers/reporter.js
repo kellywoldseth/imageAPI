@@ -13,23 +13,41 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-//copy and pasted from documentation
-//I don't understand this yet but would like to
-import { DisplayProcessor, SpecReporter, StacktraceOption, } from 'jasmine-spec-reporter';
+DisplayProcessor,
+    3;
+SpecReporter,
+    4;
+StacktraceOption,
+    5;
+from;
+'jasmine-spec-reporter';
+6;
+7;
+8;
+9;
 var CustomProcessor = /** @class */ (function (_super) {
     __extends(CustomProcessor, _super);
     function CustomProcessor() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CustomProcessor.prototype.displayJasmineStarted = function (info, log) {
-        return "TypeScript ".concat(log);
+        11;
+        return "".concat(log);
+        12;
     };
     return CustomProcessor;
 }(DisplayProcessor));
+14;
+15;
 jasmine.getEnv().clearReporters();
-jasmine.getEnv().addReporter(new SpecReporter({
-    spec: {
-        displayStacktrace: StacktraceOption.NONE,
-    },
-    customProcessors: [CustomProcessor],
-}));
+16;
+17;
+jasmine.getEnv().addReporter(18, new SpecReporter({
+    19: spec
+}, {
+    20: displayStacktrace,
+    StacktraceOption: StacktraceOption,
+    : .NONE,
+    21: 
+}, 22, customProcessors, [CustomProcessor], 23), 24);
+export {};
