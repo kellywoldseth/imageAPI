@@ -2,7 +2,7 @@ import express from 'express';
 
 const images = express.Router();
 
-images.get('/images', (req, res) => {
+images.get('/', (req, res) => {
   res.send('images is working!');
 });
 
