@@ -1,7 +1,8 @@
 //create "images" route
 import express from 'express';
 import sharp from 'sharp';
-import resizePic from '../sharp';
+import resizePic from '../../utils/imageResize';
+
 import { promises as fs } from 'fs'; //is this correct/needed?
 const images = express.Router();
 

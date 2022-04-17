@@ -1,8 +1,4 @@
-//is this the correct place for the file?
-//is sharp.ts an appropriate name?
-
 import sharp from 'sharp';
-import { promises as fs } from 'fs'; //is this correct/needed?
 
 //need to get this info from the URL eventually
 const resizePic = async (
