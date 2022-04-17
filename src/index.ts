@@ -5,6 +5,13 @@
 //test express/nodemon for index - WORKS!
 //test routes/express/nodemon for route (images) - WORKS!
 
+//TODO
+/*
+----- write  & run tests
+----- comments
+---- delete debug code
+*/
+
 //Create server
 import express from 'express';
 import routes from './routes/index';
@@ -19,17 +26,8 @@ app.listen(port, () => {
   console.log(`server started at localhost:${port}`);
 });
 
-//testing typscript and jasmine -- delete when main functionality is ready
-const add = (num: number, num2: number): number => {
-  return num + num2;
-};
-export default add;
 
-/*
-Install Sharp and configure endpoint. Documentation for Sharp can be found here. It is required that you create a separate module for your processing functionality and import it into your route. It is only required that you add resizing, but you may add additional processing if you choose to extend your application. It is also only required that you work with jpg files, so keep that in mind if you choose to use your own images and they are other formats.
-Pay close attention to if you need to use asynchronous code or not. If you do, make sure you stay consistent throughout your application.
-There is limited information on using Sharp with TypeScript, but don't let that be a blocker. Think about what type the Sharp constructor would return. Have a look at the complete documentation and the examples it provides.
-*/
+
 
 /*Write your tests. If you haven't already been writing unit tests, now would be the time to start. Think about what you should test? At a minimum, you should have at least one test for your endpoint and at least one test for your image processing, but there are many different tests you could create.
 Add caching. Add caching to your application so that repeated requests to your endpoint use pre-stored images rather than regenerating a new image each time.

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+  <title>Image API Homepage</title>
+<style>
+  body
+  {
+background-color: white;
+  }
+  h1, h2 {
+    color: darkblue;
+    text-align: center;
+    font-family:arial;
+  }
+
+ p {
+    color: darkblue;
+    text-align: center;
+    font-family:arial;
+    font-size: 30px;
+  }
+
+  ul{
+    color: darkblue;
+    font-family:arial;
+    font-size: 30px;
+    border: 1px black solid;
+    width: 25%;
+    margin: auto auto;
+  }
+  li{
+    color: darkblue;
+    font-family:arial;
+    font-size: 30px;
+  }
+
+  a{
+    text-decoration: none;
+    color: darkblue;
+    font-size: 30px;
+    font-family:arial;
+  }
+  .phover:hover
+  {
+    color: #d52b7d;
+  }
+  .spacer
+  {
+    height: 100px;
+  }
+
+</style>
+</head>
+<body>
+
+    <h1>Welcome to my Image Modifying API!</h1>
+    <h2>This project was created as part of the Udacity Full Stack Javascript Developer course.</h2>
+    <a href="https://github.com/kellywoldseth/imageAPI"><p class="phover">Github Link</p></a>
+    <hr>
+    <p>Copy & paste red text at bottom into browser url.<p>
+    <p> Once there, change the query parameters for filename, width or height.</p>
+    <p>You can select from the following image filenames:
+      <ul>
+        <li>enendadaport</li>
+        <li>fjord</li>
+        <li>icelandwaterfall</li>
+        <li>palmtunnel</li>
+        <li>santamonica</li>
+
+      </ul>
+    </p>
+    <p style="color:red;">localhost:3000/images/?filename=fjord&width=200&height=350<p>
+
+</body>
+</html>

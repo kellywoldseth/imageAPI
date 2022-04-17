@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = __importDefault(require("../index"));
+//testing jasmine -- delete when real tests are ready
 it('adds 2 nums', function () {
     var val = (0, index_1.default)(3, 4);
     expect(val).toBe(7);
