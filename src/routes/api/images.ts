@@ -4,15 +4,15 @@ import resizePic from '../sharp';
 const images = express.Router();
 
 images.get('/', (req, res) => {
-  console.log('testing images resize pic');
- const inputName: string = req.query.filename as string;
-  console.log(inputName)
-  const width: number = (req.query.width as unknown) as number;
-  const height: number = (req.query.height as unknown) as number;
+  //this is correctly getting the query parameters
+  const inputName: string = req.query.filename as string;
+  const width: number = parseInt(req.query.width as unknown as string);
+  const height: number = parseInt(req.query.height as unknown as string);
 
-  resizePic(inputName, width, height);
+  const newPic = resizePic(inputName, width, height);
 
   res.send('images is working!');
+  //res.send(newPic);
 });
 
 export default images;

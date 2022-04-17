@@ -13,10 +13,12 @@ const resizePic = async (
   //I think the return type is "sharp"- need to research how to do that
   try {
     //const newPic =
-    const newFilename: string = filename + '.jpg';
-    const outputName = filename + '_thumb.jpg';
-
-    await sharp(newFilename).resize(width, height).toFile(outputName);
+    const newFilename: string = __dirname + '/assets/' + filename + '.jpg';
+    const outputName = __dirname + '/thumbs/' +filename + '_thumb.jpg';
+    console.log(newFilename);
+    const newPic = await sharp(newFilename)
+      .resize(width, height)
+      .toFile(outputName);
     //return newPic: sharp;
   } catch (err) {
     console.log(`${err}`);
