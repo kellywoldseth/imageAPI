@@ -9,6 +9,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+//TODO
+/*
+----- write  & run tests
+----- comments
+---- delete debug code
+*/
 //Create server
 var express_1 = __importDefault(require("express"));
 var index_1 = __importDefault(require("./routes/index"));
@@ -19,16 +25,6 @@ app.use('/', index_1.default);
 app.listen(port, function () {
     console.log("server started at localhost:".concat(port));
 });
-//testing typscript and jasmine -- delete when main functionality is ready
-var add = function (num, num2) {
-    return num + num2;
-};
-exports.default = add;
-/*
-Install Sharp and configure endpoint. Documentation for Sharp can be found here. It is required that you create a separate module for your processing functionality and import it into your route. It is only required that you add resizing, but you may add additional processing if you choose to extend your application. It is also only required that you work with jpg files, so keep that in mind if you choose to use your own images and they are other formats.
-Pay close attention to if you need to use asynchronous code or not. If you do, make sure you stay consistent throughout your application.
-There is limited information on using Sharp with TypeScript, but don't let that be a blocker. Think about what type the Sharp constructor would return. Have a look at the complete documentation and the examples it provides.
-*/
 /*Write your tests. If you haven't already been writing unit tests, now would be the time to start. Think about what you should test? At a minimum, you should have at least one test for your endpoint and at least one test for your image processing, but there are many different tests you could create.
 Add caching. Add caching to your application so that repeated requests to your endpoint use pre-stored images rather than regenerating a new image each time.
 Test, Debug, and Refactor. Think of edge-cases for your project and how someone may access your project. Should they get different error messages based on what's wrong? Make certain that your user isn't left in the dark when something goes wrong.

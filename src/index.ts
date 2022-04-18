@@ -1,9 +1,4 @@
-//test prettier - WORKS!
-//test eslint - WORKS!
-//test typescript - WORKS!
-//test jasmine - WORKS!
-//test express/nodemon for index - WORKS!
-//test routes/express/nodemon for route (images) - WORKS!
+
 
 //TODO
 /*
@@ -25,9 +20,6 @@ app.use('/', routes);
 app.listen(port, () => {
   console.log(`server started at localhost:${port}`);
 });
-
-
-
 
 /*Write your tests. If you haven't already been writing unit tests, now would be the time to start. Think about what you should test? At a minimum, you should have at least one test for your endpoint and at least one test for your image processing, but there are many different tests you could create.
 Add caching. Add caching to your application so that repeated requests to your endpoint use pre-stored images rather than regenerating a new image each time.

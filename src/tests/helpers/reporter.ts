@@ -1,5 +1,4 @@
 //copy and pasted from documentation
-//I don't understand this yet but would like to
 import {
   DisplayProcessor,
   SpecReporter,

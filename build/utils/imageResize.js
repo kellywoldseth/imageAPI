@@ -47,8 +47,9 @@ var resizePic = function (filename, width, height) { return __awaiter(void 0, vo
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                newFilename = __dirname + '/assets/' + filename + '.jpg';
-                outputName = __dirname + '/thumbs/' + filename + '_thumb.jpg';
+                newFilename = 'src/assets/' + filename + '.jpg';
+                console.log(newFilename);
+                outputName = 'src/thumbs/' + filename + '_thumb.jpg';
                 return [4 /*yield*/, (0, sharp_1.default)(newFilename)
                         .resize(width, height)
                         .toFile(outputName)];
