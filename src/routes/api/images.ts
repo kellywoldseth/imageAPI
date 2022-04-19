@@ -12,13 +12,9 @@ images.get('/', (req, res) => {
   const inputName: string = req.query.filename as string;
   const width: number = parseInt(req.query.width as unknown as string);
   const height: number = parseInt(req.query.height as unknown as string);
-  
+
   //call resizePic function
-  const picResized: Promise<sharp.OutputInfo | undefined> = resizePic(
-    inputName,
-    width,
-    height
-  );
+  const picResized: Promise<string> = resizePic(inputName, width, height);
   //display the picture on server
   const pathName: string = inputName + '_thumb.jpg';
   res.sendFile(path.resolve('src', 'thumbs', pathName));

@@ -15,17 +15,18 @@ const resizePic = async (
   filename: string,
   width: number,
   height: number
-): Promise<sharp.OutputInfo | undefined> => {
+): Promise<string> => {
   try {
     const newFilename: string = 'src/assets/' + filename + '.jpg';
-    const outputName = 'src/thumbs/' + filename + '_thumb' + width + 'x' + height + '.jpg';
+    const outputName =
+      'src/thumbs/' + filename + '_thumb' + width + 'x' + height + '.jpg';
     const newPic: sharp.OutputInfo = await sharp(newFilename)
       .resize(width, height)
       .toFile(outputName);
-    return newPic;
+    return outputName;
   } catch (err) {
     console.log(`${err}`);
-    return undefined;
+    return err as string;
   }
 };
 

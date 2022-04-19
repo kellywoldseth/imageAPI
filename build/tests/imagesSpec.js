@@ -1,5 +1,4 @@
 "use strict";
-//this file contains the function that resizes an image
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -40,36 +39,57 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var sharp_1 = __importDefault(require("sharp"));
-/**
- * Function to resize an image
- * @param filename - name of the file without the .jpg extension
- * @param width - new width of the returned picture
- * @param height - new height of the returned picture
- * @return newPic - returns a new output file that has been resized and renamed
- * preconditions: filename must exist and width and height must be valid types (numbers). filename must be type .jpg.
- * postcondition: output file is displayed on server and saved in thumbs folder
- */
-var resizePic = function (filename, width, height) { return __awaiter(void 0, void 0, void 0, function () {
-    var newFilename, outputName, newPic, err_1;
+var imageResize_1 = __importDefault(require("../utils/imageResize"));
+//ADD DESCRIBE STATEMENTS
+it('should resolve to something', function () { return __awaiter(void 0, void 0, void 0, function () {
+    var resp;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 2, , 3]);
-                newFilename = 'src/assets/' + filename + '.jpg';
-                outputName = 'src/thumbs/' + filename + '_thumb' + width + 'x' + height + '.jpg';
-                return [4 /*yield*/, (0, sharp_1.default)(newFilename)
-                        .resize(width, height)
-                        .toFile(outputName)];
+            case 0: return [4 /*yield*/, (0, imageResize_1.default)('fjord', 250, 380)];
             case 1:
-                newPic = _a.sent();
-                return [2 /*return*/, outputName];
-            case 2:
-                err_1 = _a.sent();
-                console.log("".concat(err_1));
-                return [2 /*return*/, err_1];
-            case 3: return [2 /*return*/];
+                resp = _a.sent();
+                expect(resp).toEqual('src/thumbs/fjord_thumbs250x380.jpg');
+                return [2 /*return*/];
         }
     });
-}); };
-exports.default = resizePic;
+}); });
+/*
+describe('test', function() {
+    it('should resolve to something', function(done) {
+      function resizePic('fjord', 250, 380) {
+        expect(resizePic('fjord', 250, 380)).toBe('something');
+        done();
+      }
+   
+      const promise = something.withPromise();
+      promise.then(resizePic('fjord', 250, 380), done.fail);
+    });
+  });
+/*
+/*
+it('test resizePic when all parameters exist and are valid types', () => {
+  expect(resizePic('fjord', 250, 380)).toBeTruthy(); //returned valid test even when I put fjord.jpg and file was not found, so this needs to change
+});
+
+it('test resizePic when all parameters exist and are valid types, including decimal number values', () => {
+  expect(resizePic('fjord', 250.2, 380.8)).toBeTruthy(); //returned valid test even when I put fjord.jpg and file was not found, so this needs to change
+});*/
+//or rejected //or rejectedWith(new Error('Input file is missing););
+/*
+it('expects resolve', async () => {
+await resizePic('tree', 250, 380).toBeRejectedWith((new Error('Input file is missing'););
+});*/
+/* returns fails because it returns undefined
+it('test resizePic when filename does not exist -- throws an error and returns undefined', () =>{
+    expect(resizePic('tree', 250, 380)).toBeFalsy(); //returned valid test even when I put fjord.jpg and file was not found, so this needs to change
+  });*/
+//because of typescript, it won't let me test this
+/*it('test resizePic when width and/or height are not numbers -- throws an error and returns undefined', () =>{
+    expect(resizePic('fjord', '250', '380')).toBeFalsy(); //returned valid test even when I put fjord.jpg and file was not found, so this needs to change
+  });*/
+/*
+  it('expects asyncFun() result to equal value', async () => {
+   return asyncFun().then(result =>'{
+    expect(result).toBeResolved(value);
+   });
+  });*/

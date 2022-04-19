@@ -16,7 +16,6 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 //copy and pasted from documentation
-//I don't understand this yet but would like to
 var jasmine_spec_reporter_1 = require("jasmine-spec-reporter");
 var CustomProcessor = /** @class */ (function (_super) {
     __extends(CustomProcessor, _super);
