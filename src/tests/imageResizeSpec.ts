@@ -8,7 +8,7 @@ it('valid paramaters should work', async () => {
   expect(resp).toEqual('src/thumbs/fjord_thumb250x380.jpg');
 });
 
-//please help with this test. Should I my reiszeImage function return Promise<string> or something else?
+//please help with this test. Related - should I my resizePic function return Promise<string> or something else?
 it('invalid parameters with decimal values for numbers should give error', async () => {
   const resp = await resizePic('fjord', 250.2, 380.9);
   expect(resp).toBeRejectedWithError('Expected Error: Expected positive integer for width but received 250.2 of type number');
