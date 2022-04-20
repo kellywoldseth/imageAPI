@@ -41,6 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var imageResize_1 = __importDefault(require("../utils/imageResize"));
 //ADD DESCRIBE STATEMENTS
+//this test works
 it('valid paramaters should work', function () { return __awaiter(void 0, void 0, void 0, function () {
     var resp;
     return __generator(this, function (_a) {
@@ -53,6 +54,7 @@ it('valid paramaters should work', function () { return __awaiter(void 0, void 0
         }
     });
 }); });
+//please help with this test. Related - should I my resizePic function return Promise<string> or something else?
 it('invalid parameters with decimal values for numbers should give error', function () { return __awaiter(void 0, void 0, void 0, function () {
     var resp;
     return __generator(this, function (_a) {
@@ -65,6 +67,7 @@ it('invalid parameters with decimal values for numbers should give error', funct
         }
     });
 }); });
+//I think if I get the above test to work I can make this one work too
 it('invalid parameter query with filename missing', function () { return __awaiter(void 0, void 0, void 0, function () {
     var resp;
     return __generator(this, function (_a) {
@@ -77,6 +80,7 @@ it('invalid parameter query with filename missing', function () { return __await
         }
     });
 }); });
+//---------This is everything I've already tried (plus more that was deleted) that I wwant to keep until I resolve my issues -------
 /*
 describe('test', function() {
     it('should resolve to something', function(done) {

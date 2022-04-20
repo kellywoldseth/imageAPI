@@ -14,7 +14,7 @@ images.get('/', function (req, res) {
     var width = parseInt(req.query.width);
     var height = parseInt(req.query.height);
     //call resizePic function
-    var picResized = (0, imageResize_1.default)(inputName, width, height);
+    (0, imageResize_1.default)(inputName, width, height);
     //display the picture on server
     var pathName = inputName + '_thumb.jpg';
     res.sendFile(path_1.default.resolve('src', 'thumbs', pathName));

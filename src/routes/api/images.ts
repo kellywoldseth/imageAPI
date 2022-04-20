@@ -15,7 +15,7 @@ images.get('/', (req, res) => {
 
   //call resizePic function
   resizePic(inputName, width, height);
-  
+
   //display the picture on server
   const pathName: string = inputName + '_thumb.jpg';
   res.sendFile(path.resolve('src', 'thumbs', pathName));

@@ -2,12 +2,7 @@ import routes from '../routes/index';
 import { appendFile } from 'fs/promises';
 import supertest from 'supertest';
 
-
 //I also need help with these tests but I'm not ready to ask about them yet.
-
-
-
-
 
 //ADD DESCRIBE STATEMENTS
 

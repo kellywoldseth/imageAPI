@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+//I also need help with these tests but I'm not ready to ask about them yet.
 //ADD DESCRIBE STATEMENTS
 //test endpoints
 /*it('\/ endpoint', () =>{

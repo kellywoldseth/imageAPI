@@ -11,22 +11,15 @@ it('valid paramaters should work', async () => {
 //please help with this test. Related - should I my resizePic function return Promise<string> or something else?
 it('invalid parameters with decimal values for numbers should give error', async () => {
   const resp = await resizePic('fjord', 250.2, 380.9);
-  expect(resp).toBeRejectedWithError('Expected Error: Expected positive integer for width but received 250.2 of type number');
+  expect(resp).toEqual('Expected Error: Expected positive integer for width but received 250.2 of type number');
 });
 
 
 //I think if I get the above test to work I can make this one work too
-/*
 it('invalid parameter query with filename missing', async () => {
   const resp = await resizePic('tree', 250, 380);
   expect(resp).toEqual('Expected Error: Input file is missing');
-});*/
-
-
-
-
-
-
+});
 
 //---------This is everything I've already tried (plus more that was deleted) that I wwant to keep until I resolve my issues -------
 /*
