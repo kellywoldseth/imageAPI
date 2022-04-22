@@ -66,8 +66,7 @@ var resizePic = function (filename, width, height) { return __awaiter(void 0, vo
                 return [2 /*return*/, outputName];
             case 2:
                 err_1 = _a.sent();
-                console.log("".concat(err_1));
-                return [2 /*return*/, err_1];
+                return [2 /*return*/, err_1.toString()];
             case 3: return [2 /*return*/];
         }
     });

@@ -25,8 +25,7 @@ const resizePic = async (
       .toFile(outputName);
     return outputName;
   } catch (err) {
-    console.log(`${err}`);
-    return err as string;
+    return (err as string).toString();
   }
 };
 

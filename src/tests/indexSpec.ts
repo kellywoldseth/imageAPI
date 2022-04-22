@@ -1,22 +1,24 @@
+//this file tests the endpoints of the server
+
 import routes from '../routes/index';
-import { appendFile } from 'fs/promises';
+//import { appendFile } from 'fs/promises';
 import supertest from 'supertest';
+const request = supertest(routes);
+import "jasmine";
 
-//I also need help with these tests but I'm not ready to ask about them yet.
 
-//ADD DESCRIBE STATEMENTS
-
-//test endpoints
-
-/*it('\/ endpoint', () =>{
-    expect(resizePic('fjord', '250', '380')).toBeRejected(); //returned valid test even when I put fjord.jpg and file was not found, so this needs to change
+describe('testing all server endpoints', () => {
+  //test endpoints
+  /*
+it('\/ endpoint', () =>{
   });*/
 
-//test /images endpoint
-/*
-  it("gets the images endpoint", async() => {
-    const request = supertest(routes);
-    const response = await request.get('/images');
-  
+  it('main endpoint should work', async () => {
+    console.log("test 1 test");
+
+    const response =  await request.get('/');
+    console.log("test test test");
     expect(response.status).toBe(200);
-  });*/
+  });
+});
+
