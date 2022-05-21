@@ -4,6 +4,13 @@ Description: Image API that allows a user to resize an image by visiting the /im
 
 This project is for the Full Stack Javascript Developer Nanodegre through Udacity for the "Backend Development" unit.
 
+Build my program with npm run build.
+Test my program with npm run test.
+Run my program with npm run start.
+
+
+Endpoints that should be accessed include: / and /images.
+
 ------------------------------------------------------------------------------------
 New skills practiced/demonstrated: Node.js, typescript, Jasmine for testing, Express
 
@@ -21,7 +28,6 @@ Successes:
 -I taught myself git/version control and was able to use it with ease.
 -I created an index.html just for fun and to make the project look nicer. This took almost no time at all since I'm very comfortable with html and css.
 
-Run my program with npm run start.
 
 
 Questions I have for my project reviewer:
