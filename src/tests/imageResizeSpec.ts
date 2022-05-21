@@ -1,11 +1,9 @@
-//this file contains tests for the imageResize files, which containst he resizePic function
+//this file contains tests for the imageResize files, which contains the resizePic function
 
 import resizePic from '../utils/imageResize';
 
-//ADD DESCRIBE STATEMENTS
-
 //this test works
-/*describe('testing resizePic function', () => {
+describe('testing resizePic function', () => {
   it('valid paramaters should work', async () => {
     const resp = await resizePic('fjord', 250, 380);
     expect(resp).toEqual('src/thumbs/fjord_thumb250x380.jpg');
@@ -23,4 +21,3 @@ import resizePic from '../utils/imageResize';
     expect(resp).toEqual('Error: Input file is missing');
   });
 });
-*/

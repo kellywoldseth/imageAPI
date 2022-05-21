@@ -1,10 +1,3 @@
-//TODO
-/*
------ write  & run tests
------ comments
----- delete debug code
-*/
-
 //Create server
 import express from 'express';
 import routes from './routes/index';
@@ -18,3 +11,5 @@ app.use('/', routes);
 app.listen(port, () => {
   console.log(`server started at localhost:${port}`);
 });
+
+export default app;

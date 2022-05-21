@@ -1,24 +1,25 @@
 //this file tests the endpoints of the server
 
-import routes from '../routes/index';
-//import { appendFile } from 'fs/promises';
+import app from '../index';
 import supertest from 'supertest';
-const request = supertest(routes);
-import "jasmine";
 
+const request = supertest(app);
 
 describe('testing all server endpoints', () => {
-  //test endpoints
-  /*
-it('\/ endpoint', () =>{
-  });*/
-
   it('main endpoint should work', async () => {
-    console.log("test 1 test");
+    const response = await request.get('/');
+    expect(response.status).toBe(200);
+  });
 
-    const response =  await request.get('/');
-    console.log("test test test");
+  it('images endpoint with no parameters should work', async () => {
+    const response = await request.get('/images');
+    expect(response.status).toBe(200);
+  });
+
+  it('images endpoint with valid parameters should work', async () => {
+    const response = await request.get(
+      '/images/?filename=fjord&width=200&height=350'
+    );
     expect(response.status).toBe(200);
   });
 });
-

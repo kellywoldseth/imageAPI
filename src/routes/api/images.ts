@@ -18,7 +18,15 @@ images.get('/', (req, res) => {
 
   //display the picture on server
   const pathName: string = inputName + '_thumb.jpg';
-  res.sendFile(path.resolve('src', 'thumbs', pathName));
+
+  //check to see if endpoint is accessed alone (empty inputName) or with parameters
+  if (pathName == 'undefined_thumb.jpg') {
+    const errorMessage =
+      'Please put valid parameters into the URL. Revisit the home page at http://localhost:3000/ to see how to use the api properly.';
+    res.send(errorMessage);
+  } else {
+    res.sendFile(path.resolve('src', 'thumbs', pathName));
+  }
 });
 
 export default images;

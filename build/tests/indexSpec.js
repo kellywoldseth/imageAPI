@@ -40,26 +40,41 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = __importDefault(require("../routes/index"));
-//import { appendFile } from 'fs/promises';
+var index_1 = __importDefault(require("../index"));
 var supertest_1 = __importDefault(require("supertest"));
 var request = (0, supertest_1.default)(index_1.default);
-require("jasmine");
 describe('testing all server endpoints', function () {
-    //test endpoints
-    /*
-  it('\/ endpoint', () =>{
-    });*/
     it('main endpoint should work', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    console.log("test 1 test");
-                    return [4 /*yield*/, request.get('/')];
+                case 0: return [4 /*yield*/, request.get('/')];
                 case 1:
                     response = _a.sent();
-                    console.log("test test test");
+                    expect(response.status).toBe(200);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    it('images endpoint with no parameters should work', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, request.get('/images')];
+                case 1:
+                    response = _a.sent();
+                    expect(response.status).toBe(200);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    it('images endpoint with valid parameters should work', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, request.get('/images/?filename=fjord&width=200&height=350')];
+                case 1:
+                    response = _a.sent();
                     expect(response.status).toBe(200);
                     return [2 /*return*/];
             }
