@@ -51,18 +51,16 @@ var sharp_1 = __importDefault(require("sharp"));
  * postcondition: output file is displayed on server and saved in thumbs folder
  */
 var resizePic = function (filename, width, height) { return __awaiter(void 0, void 0, void 0, function () {
-    var newFilename, outputName, newPic, err_1;
+    var newFilename, outputName, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
                 newFilename = 'src/assets/' + filename + '.jpg';
-                outputName = 'src/thumbs/' + filename + '_thumb' + width + 'x' + height + '.jpg';
-                return [4 /*yield*/, (0, sharp_1.default)(newFilename)
-                        .resize(width, height)
-                        .toFile(outputName)];
+                outputName = 'src/thumbs/' + filename + width + 'x' + height + '.jpg';
+                return [4 /*yield*/, (0, sharp_1.default)(newFilename).resize(width, height).toFile(outputName)];
             case 1:
-                newPic = _a.sent();
+                _a.sent();
                 return [2 /*return*/, outputName];
             case 2:
                 err_1 = _a.sent();

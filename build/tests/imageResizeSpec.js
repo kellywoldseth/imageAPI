@@ -41,7 +41,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var imageResize_1 = __importDefault(require("../utils/imageResize"));
-//this test works
 describe('testing resizePic function', function () {
     it('valid paramaters should work', function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
@@ -50,7 +49,7 @@ describe('testing resizePic function', function () {
                 case 0: return [4 /*yield*/, (0, imageResize_1.default)('fjord', 250, 380)];
                 case 1:
                     resp = _a.sent();
-                    expect(resp).toEqual('src/thumbs/fjord_thumb250x380.jpg');
+                    expect(resp).toEqual('src/thumbs/fjord250x380.jpg');
                     return [2 /*return*/];
             }
         });
