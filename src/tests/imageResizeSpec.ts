@@ -2,11 +2,10 @@
 
 import resizePic from '../utils/imageResize';
 
-//this test works
 describe('testing resizePic function', () => {
   it('valid paramaters should work', async () => {
     const resp = await resizePic('fjord', 250, 380);
-    expect(resp).toEqual('src/thumbs/fjord_thumb250x380.jpg');
+    expect(resp).toEqual('src/thumbs/fjord250x380.jpg');
   });
 
   it('invalid parameters with decimal values for numbers should give error', async () => {
