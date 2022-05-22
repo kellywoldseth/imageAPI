@@ -72,7 +72,7 @@ images.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
                     //display picture on server
                     res.sendFile(path_1.default.resolve('src', 'thumbs', pathName_1));
                 });
-            } //file already exists - skip resize function and send directly to server
+            } //file already exists - skip resize function and display directly on server
             else {
                 res.sendFile(path_1.default.resolve('src', 'thumbs', pathName_1));
             }

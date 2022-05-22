@@ -39,7 +39,7 @@ images.get('/', async (req, res) => {
         //display picture on server
         res.sendFile(path.resolve('src', 'thumbs', pathName));
       });
-    } //file already exists - skip resize function and send directly to server
+    } //file already exists - skip resize function and display directly on server
     else {
       res.sendFile(path.resolve('src', 'thumbs', pathName));
     }

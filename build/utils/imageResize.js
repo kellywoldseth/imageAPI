@@ -48,7 +48,7 @@ var sharp_1 = __importDefault(require("sharp"));
  * @param height - new height of the returned picture
  * @return newPic - returns a new output file that has been resized and renamed
  * preconditions: filename must exist and width and height must be valid types (numbers). filename must be type .jpg.
- * postcondition: output file is displayed on server and saved in thumbs folder
+ * postcondition: output file is saved in thumbs folder
  */
 var resizePic = function (filename, width, height) { return __awaiter(void 0, void 0, void 0, function () {
     var newFilename, outputName, err_1;

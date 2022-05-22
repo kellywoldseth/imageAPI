@@ -6,7 +6,6 @@ import supertest from 'supertest';
 const request = supertest(app);
 
 describe('testing all server endpoints', () => {
-
   it('images endpoint with no parameters should work and send error message', async () => {
     const response = await request.get('/images');
     expect(response.status).toBe(200);
