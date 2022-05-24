@@ -9,7 +9,7 @@ import fileExistsInThumbs from '../../utils/fileExistsInThumbs';
 
 const images = express.Router();
 
-images.get('/', async (req, res) => {
+images.get('/', async (req: express.Request, res: express.Response): void => {
   const errorMessage =
     'Please put valid parameters into the URL. Revisit the home page at http://localhost:3000/ to see how to use the api properly.';
   //parse querty parameters
@@ -37,11 +37,11 @@ images.get('/', async (req, res) => {
       //call resizePic function to save picture to thumbs folder
       resizePic(inputName, width, height).then((response) => {
         //display picture on server
-        res.sendFile(path.resolve('src', 'thumbs', pathName));
+        res.sendFile(path.resolve('thumbs', pathName));
       });
     } //file already exists - skip resize function and display directly on server
     else {
-      res.sendFile(path.resolve('src', 'thumbs', pathName));
+      res.sendFile(path.resolve('thumbs', pathName));
     }
   } catch (error) {
     res.send(errorMessage);

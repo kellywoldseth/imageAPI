@@ -8,7 +8,7 @@ import fs from 'fs';
  */
 function fileExistsInAssets(filename: string): boolean {
   try {
-    fs.accessSync('src/assets/' + filename);
+    fs.accessSync(__dirname + '/assets/' + filename);
     return true;
   } catch (e) {
     return false;
