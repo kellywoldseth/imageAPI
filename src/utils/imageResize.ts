@@ -17,8 +17,8 @@ const resizePic = async (
   height: number
 ): Promise<string> => {
   try {
-    const newFilename: string = 'src/assets/' + filename + '.jpg';
-    const outputName = 'src/thumbs/' + filename + width + 'x' + height + '.jpg';
+    const newFilename: string = 'assets/' + filename + '.jpg';
+    const outputName = 'thumbs/' + filename + width + 'x' + height + '.jpg';
     await sharp(newFilename).resize(width, height).toFile(outputName);
     return outputName;
   } catch (err) {
