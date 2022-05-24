@@ -14,7 +14,7 @@ function fileExistsInThumbs(
   height: number
 ): boolean {
   try {
-    fs.accessSync('src/thumbs/' + filename + width + 'x' + height + '.jpg');
+    fs.accessSync(__dirname + '/thumbs/' + filename + width + 'x' + height + '.jpg');
     return true;
   } catch (e) {
     return false;
