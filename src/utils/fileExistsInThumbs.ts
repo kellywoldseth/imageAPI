@@ -1,6 +1,6 @@
 //received help from Daniel H on Udacity's Knowledge portal
 import fs from 'fs';
-
+import path from 'path';
 /**
  * Function to check if an image exists in the thumbs folder
  * @param filename - name of the file without the .jpg extension
@@ -14,7 +14,8 @@ function fileExistsInThumbs(
   height: number
 ): boolean {
   try {
-    fs.accessSync(__dirname + '/thumbs/' + filename + width + 'x' + height + '.jpg');
+    const newFilename: string = filename + width + 'x' + height + '.jpg';
+    fs.accessSync(path.resolve(__dirname, '..', '..', 'thumbs', newFilename));
     return true;
   } catch (e) {
     return false;

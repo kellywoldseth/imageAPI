@@ -41,6 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var sharp_1 = __importDefault(require("sharp"));
+var path_1 = __importDefault(require("path"));
 /**
  * Function to resize an image
  * @param filename - name of the file without the .jpg extension
@@ -51,14 +52,16 @@ var sharp_1 = __importDefault(require("sharp"));
  * postcondition: output file is saved in thumbs folder
  */
 var resizePic = function (filename, width, height) { return __awaiter(void 0, void 0, void 0, function () {
-    var newFilename, outputName, err_1;
+    var newFilenameInput, inputName, newFilenameOutput, outputName, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                newFilename = 'src/assets/' + filename + '.jpg';
-                outputName = 'src/thumbs/' + filename + width + 'x' + height + '.jpg';
-                return [4 /*yield*/, (0, sharp_1.default)(newFilename).resize(width, height).toFile(outputName)];
+                newFilenameInput = filename + '.jpg';
+                inputName = path_1.default.resolve(__dirname, '..', '..', 'assets', newFilenameInput);
+                newFilenameOutput = filename + width + 'x' + height + '.jpg';
+                outputName = path_1.default.resolve(__dirname, '..', '..', 'thumbs', newFilenameOutput);
+                return [4 /*yield*/, (0, sharp_1.default)(inputName).resize(width, height).toFile(outputName)];
             case 1:
                 _a.sent();
                 return [2 /*return*/, outputName];

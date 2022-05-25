@@ -9,7 +9,7 @@ import fileExistsInThumbs from '../../utils/fileExistsInThumbs';
 
 const images = express.Router();
 
-images.get('/', async (req: express.Request, res: express.Response): void => {
+images.get('/', async (req: express.Request, res: express.Response) => {
   const errorMessage =
     'Please put valid parameters into the URL. Revisit the home page at http://localhost:3000/ to see how to use the api properly.';
   //parse querty parameters

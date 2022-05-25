@@ -1,5 +1,5 @@
 "use strict";
-//This file creates the '/images' endpoint
+//this file contains tests for the fileExistsInThumbs function
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -40,47 +40,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = __importDefault(require("express"));
-var imageResize_1 = __importDefault(require("../../utils/imageResize"));
-var path_1 = __importDefault(require("path"));
-var fileExistsInAssets_1 = __importDefault(require("../../utils/fileExistsInAssets"));
-var fileExistsInThumbs_1 = __importDefault(require("../../utils/fileExistsInThumbs"));
-var images = express_1.default.Router();
-images.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var errorMessage, inputName, width, height, pathName_1;
-    return __generator(this, function (_a) {
-        errorMessage = 'Please put valid parameters into the URL. Revisit the home page at http://localhost:3000/ to see how to use the api properly.';
-        inputName = req.query.filename;
-        width = parseInt(req.query.width);
-        height = parseInt(req.query.height);
-        //check to see if endpoint is accessed with no parameters or invalid parameters
-        if (!(0, fileExistsInAssets_1.default)(inputName + '.jpg') ||
-            inputName.length == 0 ||
-            width <= 0 ||
-            height <= 0 ||
-            isNaN(width) ||
-            isNaN(height)) {
-            res.send(errorMessage);
-        }
-        //valid parameters should result in an image displayed the picture on server
-        try {
-            pathName_1 = inputName + width + 'x' + height + '.jpg';
-            //check if file already exists in cache
-            if (!(0, fileExistsInThumbs_1.default)(inputName, width, height)) {
-                //call resizePic function to save picture to thumbs folder
-                (0, imageResize_1.default)(inputName, width, height).then(function (response) {
-                    //display picture on server
-                    res.sendFile(path_1.default.resolve('thumbs', pathName_1));
-                });
-            } //file already exists - skip resize function and display directly on server
-            else {
-                res.sendFile(path_1.default.resolve('thumbs', pathName_1));
+var fileExistsInThumbs_1 = __importDefault(require("../utils/fileExistsInThumbs"));
+describe('testing fileExistsInThumbs function', function () {
+    it('file exists', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, (0, fileExistsInThumbs_1.default)('fjord', 200, 350)];
+                case 1:
+                    resp = _a.sent();
+                    expect(resp).toBe(true);
+                    return [2 /*return*/];
             }
-        }
-        catch (error) {
-            res.send(errorMessage);
-        }
-        return [2 /*return*/];
-    });
-}); });
-exports.default = images;
+        });
+    }); });
+    it('file does not exist', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, (0, fileExistsInThumbs_1.default)('fjordabc', 200, 350)];
+                case 1:
+                    resp = _a.sent();
+                    expect(resp).toBe(false);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+});

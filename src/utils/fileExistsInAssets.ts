@@ -1,6 +1,6 @@
 //received help from Daniel H on Udacity's Knowledge portal
 import fs from 'fs';
-
+import path from 'path';
 /**
  * Function to check if an image exists in the assets folder
  * @param filename - name of the file with the .jpg extension
@@ -8,7 +8,7 @@ import fs from 'fs';
  */
 function fileExistsInAssets(filename: string): boolean {
   try {
-    fs.accessSync(__dirname + '/assets/' + filename);
+    fs.accessSync(path.resolve(__dirname, '..', '..', 'assets', filename));
     return true;
   } catch (e) {
     return false;

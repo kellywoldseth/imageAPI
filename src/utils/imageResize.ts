@@ -1,7 +1,7 @@
 //this file contains the function that resizes an image
 
 import sharp from 'sharp';
-
+import path from 'path';
 /**
  * Function to resize an image
  * @param filename - name of the file without the .jpg extension
@@ -17,9 +17,23 @@ const resizePic = async (
   height: number
 ): Promise<string> => {
   try {
-    const newFilename: string = 'assets/' + filename + '.jpg';
-    const outputName = 'thumbs/' + filename + width + 'x' + height + '.jpg';
-    await sharp(newFilename).resize(width, height).toFile(outputName);
+    const newFilenameInput: string = filename + '.jpg';
+    const inputName: string = path.resolve(
+      __dirname,
+      '..',
+      '..',
+      'assets',
+      newFilenameInput
+    );
+    const newFilenameOutput: string = filename + width + 'x' + height + '.jpg';
+    const outputName: string = path.resolve(
+      __dirname,
+      '..',
+      '..',
+      'thumbs',
+      newFilenameOutput
+    );
+    await sharp(inputName).resize(width, height).toFile(outputName);
     return outputName;
   } catch (err) {
     return (err as string).toString();
